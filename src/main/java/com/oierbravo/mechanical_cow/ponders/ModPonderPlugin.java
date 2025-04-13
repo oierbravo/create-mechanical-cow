@@ -1,0 +1,38 @@
+package com.oierbravo.mechanical_cow.ponders;
+
+import com.oierbravo.mechanical_cow.ModConstants;
+import com.oierbravo.mechanical_cow.registrate.ModBlocks;
+import com.tterrag.registrate.util.entry.ItemProviderEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
+import net.createmod.ponder.api.registration.PonderPlugin;
+import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
+import net.createmod.ponder.api.registration.PonderTagRegistrationHelper;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
+
+import static com.simibubi.create.infrastructure.ponder.AllCreatePonderTags.KINETIC_APPLIANCES;
+
+public class ModPonderPlugin implements PonderPlugin {
+
+	@Override
+	public @NotNull String getModId() {
+		return ModConstants.MODID;
+	}
+
+	@Override
+	public void registerScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
+		PonderSceneRegistrationHelper<ItemProviderEntry<?, ?>> HELPER = helper.withKeyFunction(RegistryEntry::getId);
+
+        HELPER.forComponents(ModBlocks.MECHANICAL_COW)
+               .addStoryBoard("mechanical_cow", MechanicalCowScenes::mechanicalCow);
+
+	}
+
+	@Override
+	public void registerTags(PonderTagRegistrationHelper<ResourceLocation> helper) {
+		PonderTagRegistrationHelper<RegistryEntry<?, ?>> TAG_HELPER = helper.withKeyFunction(RegistryEntry::getId);
+        TAG_HELPER.addToTag(KINETIC_APPLIANCES).add(ModBlocks.MECHANICAL_COW);
+	}
+
+
+}

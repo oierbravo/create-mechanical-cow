@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:brass_sheet"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "E": {
+      "tag": "c:crops/wheat"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "V": {
+      "item": "create:item_vault"
+    }
+  },
+  "pattern": [
+    " C ",
+    "EVE",
+    "BSB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mechanical_cow:mechanical_cow"
+  }
+}

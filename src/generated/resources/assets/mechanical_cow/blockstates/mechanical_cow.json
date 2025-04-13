@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mechanical_cow:block/mechanical_cow/block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mechanical_cow:block/mechanical_cow/block"
+    },
+    "facing=south": {
+      "model": "mechanical_cow:block/mechanical_cow/block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mechanical_cow:block/mechanical_cow/block",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// 1.21.1	2025-04-13T01:48:50.699371509	Registrate Provider for mechanical_cow [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+acef02d47a9e7f000f46e8e5eabc3437729b8e93 assets/mechanical_cow/blockstates/mechanical_cow.json
+6ea58f33ea558c6641ceef5b023357c6adce6bda assets/mechanical_cow/lang/en_ud.json
+4dd6f76c64f989217f3e0ae0a54ca54f1bd8895b assets/mechanical_cow/lang/en_us.json
+1a90eb97debad49371dac3fa3a7195c7d92ffef8 assets/mechanical_cow/models/item/mechanical_cow.json
+389633ee489165d787e6138255aa01618bbb1fdd data/mechanical_cow/advancement/recipes/misc/crafting/mechanical_cow.json
+898a057cbeddd940636afcc9da31501d6c0a56a7 data/mechanical_cow/loot_table/blocks/mechanical_cow.json
+db1be21c9710100d1202f3bdaa81d8b1d2690054 data/mechanical_cow/recipe/crafting/mechanical_cow.json
+bca8e129e3ab9c3db1d1ce664c7f48c2e59957b1 data/minecraft/tags/block/mineable/pickaxe.json

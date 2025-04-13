@@ -1,0 +1,33 @@
+modLoader="javafml" #mandatory
+loaderVersion = "[0,)"
+license="LGPL3"
+[[mods]] #mandatory
+modId="${mod_id}" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="${mod_name}" #mandatory
+logoFile="logo.png" #optional
+credits="Thanks to the Creators of Create" #optional
+authors="oierbravo" #optional
+description='''
+Create addon
+'''
+[[dependencies."${mod_id}"]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId = "create"
+    mandatory = true
+    versionRange="[6.0.4,6.1.0)"
+    ordering = "AFTER"
+    side = "BOTH"
