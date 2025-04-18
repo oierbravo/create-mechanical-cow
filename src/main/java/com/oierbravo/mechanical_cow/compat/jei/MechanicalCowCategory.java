@@ -1,11 +1,8 @@
 package com.oierbravo.mechanical_cow.compat.jei;
 
-import com.oierbravo.mechanical_cow.MechanicalCow;
 import com.oierbravo.mechanical_cow.content.MechanicalCowConfigUtils;
-import com.oierbravo.mechanical_cow.foundation.utility.ModLang;
-import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
+import com.oierbravo.mechanical_cow.ModLang;
 import com.oierbravo.mechanical_cow.registrate.ModBlocks;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -21,15 +18,10 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;

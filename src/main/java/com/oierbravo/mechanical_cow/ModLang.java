@@ -1,6 +1,5 @@
-package com.oierbravo.mechanical_cow.foundation.utility;
+package com.oierbravo.mechanical_cow;
 
-import com.oierbravo.mechanical_cow.ModConstants;
 import net.createmod.catnip.lang.Lang;
 import net.createmod.catnip.lang.LangBuilder;
 

@@ -58,19 +58,18 @@ public class MechanicalCow
         generateLangEntries();
     }
     private void generateLangEntries(){
-        new RegistrateLangBuilder(MODID, registrate())
-            .addRaw("config.jade.plugin_mechanical_cow.data", "Mechanical Cow")
-            .add("itemGroup.mechanical_cow:main", "Mechanical Cow")
-            .addRaw("block.mechanical_cow.mechanical_cow.tooltip", "MECHANICAL Cow")
-            .addRaw("block.mechanical_cow.mechanical_cow.tooltip.summary", "Cow _Milk_ generator.")
+        new RegistrateLangBuilder<>(MODID, registrate())
+            .addJade(ModConstants.DISPLAY_NAME)
+            .addCreativeTab(ModConstants.DISPLAY_NAME)
+            .addBlockTooltipSummary("mechanical_cow", "Cow _Milk_ generator.")
             .add("mechanical_cow.tooltip.progress", "Progress: %d%%")
-            .add("ponder.mechanical_cow.header", "Mechanical Milk generator")
-            .add("ponder.mechanical_cow.text_1", "The Mechanical Cow uses rotational force and an specific ingredient to generate milk")
-            .add("ponder.mechanical_cow.text_2", "Its powered from the bottom")
-            .add("ponder.mechanical_cow.text_3", "Item input can ONLY go from the FRONT side")
-            .add("ponder.mechanical_cow.text_4", "Can only be inserted by automation")
-            .add("ponder.mechanical_cow.text_5", "Milk output is ONLY located on the BACK side")
-            .add("ponder.mechanical_cow.text_6", "Can only be extracted by automation")
+            .addPonderHeader("ponder.mechanical_cow.header", "Mechanical Milk generator")
+            .addPonderText(1,"mechanical_cow", "The Mechanical Cow uses rotational force and an specific ingredient to generate milk")
+            .addPonderText(2,"mechanical_cow", "Its powered from the bottom")
+            .addPonderText(3,"mechanical_cow", "Item input can ONLY go from the FRONT side")
+            .addPonderText(4,"mechanical_cow", "Can only be inserted by automation")
+            .addPonderText(5,"mechanical_cow", "Milk output is ONLY located on the BACK side")
+            .addPonderText(6,"mechanical_cow", "Can only be extracted by automation")
             .add("recipe", "Mechanical Cow Recipe");
 
     }

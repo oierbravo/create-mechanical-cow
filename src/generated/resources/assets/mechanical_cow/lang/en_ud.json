@@ -1,16 +1,15 @@
 {
   "block.mechanical_cow.mechanical_cow": "ʍoƆ ןɐɔıuɐɥɔǝW",
-  "block.mechanical_cow.mechanical_cow.tooltip": "ʍoƆ ꞀⱯƆINⱯHƆƎW",
   "block.mechanical_cow.mechanical_cow.tooltip.summary": "˙ɹoʇɐɹǝuǝb ‾ʞןıW‾ ʍoƆ",
-  "config.jade.plugin_mechanical_cow.data": "ʍoƆ ןɐɔıuɐɥɔǝW",
-  "mechanical_cow.itemGroup.mechanical_cow:main": "ʍoƆ ןɐɔıuɐɥɔǝW",
+  "config.jade.plugin_mechanical_cow.data": "ʍoƆ ןɐɔıuɐɥɔǝW ǝʇɐǝɹƆ",
+  "mechanical_cow.itemGroup:main": "ʍoƆ ןɐɔıuɐɥɔǝW ǝʇɐǝɹƆ",
   "mechanical_cow.mechanical_cow.tooltip.progress": "%d%% :ssǝɹboɹԀ",
-  "mechanical_cow.ponder.mechanical_cow.header": "ʞןıɯ sǝʇɐɹǝuǝ⅁",
   "mechanical_cow.ponder.mechanical_cow.text_1": "ʞןıɯ ǝʇɐɹǝuǝb oʇ ʇuǝıpǝɹbuı ɔıɟıɔǝds uɐ puɐ ǝɔɹoɟ ןɐuoıʇɐʇoɹ sǝsn ʍoƆ ןɐɔıuɐɥɔǝW ǝɥ⟘",
   "mechanical_cow.ponder.mechanical_cow.text_2": "ɯoʇʇoq ǝɥʇ ɯoɹɟ pǝɹǝʍod sʇI",
   "mechanical_cow.ponder.mechanical_cow.text_3": "ǝpıs ⟘NOᴚℲ ǝɥʇ ɯoɹɟ ob ʎꞀNO uɐɔ ʇnduı ɯǝʇI",
-  "mechanical_cow.ponder.mechanical_cow.text_4": "uoıʇɐɯoʇnɐ ʎq pǝʇɔɐɹʇxǝ ǝq ʎןuo uɐƆ",
+  "mechanical_cow.ponder.mechanical_cow.text_4": "uoıʇɐɯoʇnɐ ʎq pǝʇɹǝsuı ǝq ʎןuo uɐƆ",
   "mechanical_cow.ponder.mechanical_cow.text_5": "ǝpıs ʞƆⱯᗺ ǝɥʇ uo pǝʇɐɔoן ʎꞀNO sı ʇndʇno ʞןıW",
   "mechanical_cow.ponder.mechanical_cow.text_6": "uoıʇɐɯoʇnɐ ʎq pǝʇɔɐɹʇxǝ ǝq ʎןuo uɐƆ",
+  "mechanical_cow.ponder.ponder.mechanical_cow.header.header": "ɹoʇɐɹǝuǝb ʞןıW ןɐɔıuɐɥɔǝW",
   "mechanical_cow.recipe": "ǝdıɔǝᴚ ʍoƆ ןɐɔıuɐɥɔǝW"
 }

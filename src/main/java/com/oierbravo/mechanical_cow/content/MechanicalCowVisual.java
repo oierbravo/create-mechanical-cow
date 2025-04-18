@@ -2,7 +2,7 @@ package com.oierbravo.mechanical_cow.content;
 
 import com.mojang.math.Axis;
 import com.oierbravo.mechanical_cow.registrate.ModPartials;
-import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.CycleBehavior;
+import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.DynamicCycleBehavior;
 import com.oierbravo.mechanicals.foundation.visual.HalfShaftVisual;
 import com.simibubi.create.content.kinetics.base.RotatingInstance;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlock;
@@ -77,7 +77,7 @@ public class MechanicalCowVisual extends HalfShaftVisual<MechanicalCowBlockEntit
     }
 
     private float getProgress(MechanicalCowBlockEntity pCowBlockEntity) {
-        CycleBehavior cycleBehavior = pCowBlockEntity.getCycleBehaviour();
+        DynamicCycleBehavior cycleBehavior = pCowBlockEntity.getCycleBehaviour();
         return cycleBehavior.getProgress(AnimationTickHolder.getPartialTicks());
     }
     @Override

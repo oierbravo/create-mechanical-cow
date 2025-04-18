@@ -15,7 +15,7 @@
       "item": "create:shaft"
     },
     "V": {
-      "item": "create:item_vault"
+      "item": "create:fluid_tank"
     }
   },
   "pattern": [

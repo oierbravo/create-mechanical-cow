@@ -1,37 +1,29 @@
 package com.oierbravo.mechanical_cow.content;
 
 import com.oierbravo.mechanical_cow.MechanicalCow;
-import com.oierbravo.mechanical_cow.foundation.utility.ModLang;
+import com.oierbravo.mechanical_cow.ModLang;
 import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
 import com.oierbravo.mechanical_cow.registrate.ModBlockEntities;
 import com.oierbravo.mechanicals.compat.jade.IHavePercent;
-import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.CycleBehavior;
-import com.simibubi.create.AllFluids;
+import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.DynamicCycleBehavior;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -42,9 +34,9 @@ import org.slf4j.Logger;
 
 import java.util.List;
 
-public class MechanicalCowBlockEntity extends KineticBlockEntity implements CycleBehavior.CycleBehaviourSpecifics, IHavePercent {
+public class MechanicalCowBlockEntity extends KineticBlockEntity implements DynamicCycleBehavior.DynamicCycleBehaviorSpecifics, IHavePercent {
 
-    private CycleBehavior cycleBehaviour;
+    private DynamicCycleBehavior cycleBehaviour;
     public SmartFluidTankBehaviour outputTank;
     private Ingredient requiredItemIngredient;
     private int requiredIngredientAmount;
@@ -66,12 +58,17 @@ public class MechanicalCowBlockEntity extends KineticBlockEntity implements Cycl
     }
 
     @Override
+    public int getProcessingTime() {
+        return MConfigs.server().mechanicalCow.processingTime.get();
+    }
+
+    @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         outputTank = SmartFluidTankBehaviour.single(this, MConfigs.server().mechanicalCow.fluidCapacity.get());
         behaviours.add(outputTank);
         
 
-        cycleBehaviour = new CycleBehavior(this, MConfigs.server().mechanicalCow.processingTime.get(),false);
+        cycleBehaviour = new DynamicCycleBehavior(this);
         behaviours.add(cycleBehaviour);
     }
 
@@ -118,7 +115,7 @@ public class MechanicalCowBlockEntity extends KineticBlockEntity implements Cycl
         return inputInventory;
     }
 
-    public CycleBehavior getCycleBehaviour() {
+    public DynamicCycleBehavior getCycleBehaviour() {
         return cycleBehaviour;
     }
 
@@ -162,13 +159,8 @@ public class MechanicalCowBlockEntity extends KineticBlockEntity implements Cycl
     }
 
     @Override
-    public void playSound() {
+    public void playCompletionSound() {
         level.playSound((Entity) null, worldPosition, SoundEvents.COW_MILK, SoundSource.BLOCKS, MConfigs.server().mechanicalCow.soundVolume.get().floatValue(),1.0f);
-    }
-
-    @Override
-    public int getCycles() {
-        return 1;
     }
 
     @Override
@@ -183,7 +175,7 @@ public class MechanicalCowBlockEntity extends KineticBlockEntity implements Cycl
 
     @Override
     public int getProgressPercent() {
-        return this.cycleBehaviour.getCycleProgressPercent();
+        return this.cycleBehaviour.getProgressPercent();
     }
 
 

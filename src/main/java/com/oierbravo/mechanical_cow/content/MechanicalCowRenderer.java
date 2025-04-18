@@ -3,12 +3,11 @@ package com.oierbravo.mechanical_cow.content;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.oierbravo.mechanical_cow.registrate.ModPartials;
-import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.CycleBehavior;
+import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.DynamicCycleBehavior;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import dev.engine_room.flywheel.api.visualization.VisualizationManager;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -30,7 +29,7 @@ public class MechanicalCowRenderer extends KineticBlockEntityRenderer<Mechanical
 
         BlockState blockState = be.getBlockState();
 
-        CycleBehavior cycleBehavior = be.getCycleBehaviour();
+        DynamicCycleBehavior cycleBehavior = be.getCycleBehaviour();
 
         SuperByteBuffer headRender = CachedBuffers.partialFacing(ModPartials.HEAD, blockState,
                 blockState.getValue(HORIZONTAL_FACING).getOpposite());
