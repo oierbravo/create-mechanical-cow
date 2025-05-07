@@ -63,7 +63,7 @@ public class MechanicalCow
             .addCreativeTab(ModConstants.DISPLAY_NAME)
             .addBlockTooltipSummary("mechanical_cow", "Cow _Milk_ generator.")
             .add("mechanical_cow.tooltip.progress", "Progress: %d%%")
-            .addPonderHeader("ponder.mechanical_cow.header", "Mechanical Milk generator")
+            .addPonderHeader("mechanical_cow", "Mechanical Milk generator")
             .addPonderText(1,"mechanical_cow", "The Mechanical Cow uses rotational force and an specific ingredient to generate milk")
             .addPonderText(2,"mechanical_cow", "Its powered from the bottom")
             .addPonderText(3,"mechanical_cow", "Item input can ONLY go from the FRONT side")
