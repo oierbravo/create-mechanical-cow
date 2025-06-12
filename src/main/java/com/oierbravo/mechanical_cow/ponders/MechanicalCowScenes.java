@@ -2,7 +2,8 @@ package com.oierbravo.mechanical_cow.ponders;
 
 import com.oierbravo.mechanical_cow.content.MechanicalCowBlock;
 import com.oierbravo.mechanical_cow.content.MechanicalCowBlockEntity;
-import com.oierbravo.mechanical_cow.content.MechanicalCowConfigUtils;
+import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
+import com.oierbravo.mechanicals.utility.MechanicalConfigUtils;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
@@ -105,7 +106,7 @@ public class MechanicalCowScenes {
 
 
 
-        FluidStack outputFluidStack = MechanicalCowConfigUtils.getOutputFluidStack();
+        FluidStack outputFluidStack = MechanicalConfigUtils.readFluidStack(MConfigs.server().mechanicalCow.outputFluid.get(),MConfigs.server().mechanicalCow.outputAmount.get(),"minecraft:milk");
         outputFluidStack.setAmount(1000);
         scene.world().modifyBlockEntity(cowPos, MechanicalCowBlockEntity.class,
                 ms -> ms.outputTank.getPrimaryHandler().fill(outputFluidStack, IFluidHandler.FluidAction.EXECUTE));

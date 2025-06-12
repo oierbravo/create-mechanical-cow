@@ -1,7 +1,7 @@
-// 1.21.1	2025-04-18T02:30:09.265561127	Registrate Provider for mechanical_cow [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2025-06-12T21:19:07.717250541	Registrate Provider for mechanical_cow [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 acef02d47a9e7f000f46e8e5eabc3437729b8e93 assets/mechanical_cow/blockstates/mechanical_cow.json
-c9d05b55aa6358e3ee394a9629fa8399c2ca899c assets/mechanical_cow/lang/en_ud.json
-63545e184d20560687b4725f29725119175d9af4 assets/mechanical_cow/lang/en_us.json
+0005c800d21ece087d960645359c6993b2fc8178 assets/mechanical_cow/lang/en_ud.json
+3715f5cb425c161a94d59bff536ad9beba2e3821 assets/mechanical_cow/lang/en_us.json
 1a90eb97debad49371dac3fa3a7195c7d92ffef8 assets/mechanical_cow/models/item/mechanical_cow.json
 389633ee489165d787e6138255aa01618bbb1fdd data/mechanical_cow/advancement/recipes/misc/crafting/mechanical_cow.json
 898a057cbeddd940636afcc9da31501d6c0a56a7 data/mechanical_cow/loot_table/blocks/mechanical_cow.json

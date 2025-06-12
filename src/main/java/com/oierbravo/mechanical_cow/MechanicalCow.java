@@ -2,7 +2,6 @@ package com.oierbravo.mechanical_cow;
 
 import com.mojang.logging.LogUtils;
 import com.oierbravo.mechanical_cow.content.MechanicalCowBlockEntity;
-import com.oierbravo.mechanical_cow.infrastructure.data.ModDataGen;
 import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
 import com.oierbravo.mechanical_cow.ponders.ModPonderPlugin;
 import com.oierbravo.mechanical_cow.registrate.*;
@@ -52,8 +51,6 @@ public class MechanicalCow
 
         modEventBus.addListener(this::doClientStuff);
         modEventBus.addListener(this::registerCapabilities);
-
-        modEventBus.addListener(ModDataGen::gatherData);
 
         generateLangEntries();
     }

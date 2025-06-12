@@ -1,8 +1,9 @@
 package com.oierbravo.mechanical_cow.compat.jei;
 
-import com.oierbravo.mechanical_cow.content.MechanicalCowConfigUtils;
 import com.oierbravo.mechanical_cow.ModLang;
+import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
 import com.oierbravo.mechanical_cow.registrate.ModBlocks;
+import com.oierbravo.mechanicals.utility.MechanicalConfigUtils;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -21,6 +22,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 import java.util.ArrayList;
@@ -104,8 +106,8 @@ public class MechanicalCowCategory implements IRecipeCategory<MechanicalCowCateg
     public static List<MechanicalCowRecipe> getRecipes() {
         List<MechanicalCowRecipe> recipes = new ArrayList<>();
         recipes.add(new MechanicalCowRecipe(
-                MechanicalCowConfigUtils.getRequiredIngredient(),
-                MechanicalCowConfigUtils.getOutputFluidStack()
+                MechanicalConfigUtils.readIngredient(MConfigs.server().mechanicalCow.requiredIngredient.get(), Tags.Items.CROPS_WHEAT),
+                MechanicalConfigUtils.readFluidStack(MConfigs.server().mechanicalCow.outputFluid.get(),MConfigs.server().mechanicalCow.outputAmount.get(),"minecraft:milk")
                 ));
         return recipes;
     }

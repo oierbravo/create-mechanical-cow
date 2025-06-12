@@ -6,6 +6,7 @@ import com.oierbravo.mechanical_cow.infrastructure.config.MConfigs;
 import com.oierbravo.mechanical_cow.registrate.ModBlockEntities;
 import com.oierbravo.mechanicals.compat.jade.IHavePercent;
 import com.oierbravo.mechanicals.foundation.blockEntity.behaviour.DynamicCycleBehavior;
+import com.oierbravo.mechanicals.utility.MechanicalConfigUtils;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -183,11 +185,11 @@ public class MechanicalCowBlockEntity extends KineticBlockEntity implements Dyna
         requiredIngredientAmount = MConfigs.server().mechanicalCow.requiredIngredientAmount.get();
         if (requiredItemIngredient == null) {
             // verify and set the configured ingredient
-            requiredItemIngredient = MechanicalCowConfigUtils.getRequiredIngredient();
+            requiredItemIngredient = MechanicalConfigUtils.readIngredient(MConfigs.server().mechanicalCow.requiredIngredient.get(), Tags.Items.CROPS_WHEAT);
         }
 
         if( outputFluid == null){
-            outputFluid = MechanicalCowConfigUtils.getOutputFluidStack();
+            outputFluid = MechanicalConfigUtils.readFluidStack(MConfigs.server().mechanicalCow.outputFluid.get(),MConfigs.server().mechanicalCow.outputAmount.get(),"minecraft:milk");
         }
     }
 
